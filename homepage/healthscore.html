@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NOURISH</title>
+        <link rel="icon" type="image/x-icon" href="C:\Users\aishwarya\Downloads\NOURISH\homepage\images\diet.png">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+    <body>
+        <div  class="header">
+            <a href="#"  class="logo" style="color:white"  >NOURISH</a>
+
+
+    </div>
+    <div class="header-right">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="home.html" style="text-decoration: none; color: black;" class="active">Home</a> &nbsp; &nbsp; &nbsp; &nbsp;
+        <a href="healthscore.html" class="HealthScore" style="text-decoration:none; color: black;">HealthScore</a> &nbsp; &nbsp; &nbsp; &nbsp;
+        <a href="getcoupon.html" class="coupon" style="text-decoration:none; color: black;">Get Coupons</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <a href="dietplan.html" class="about" style="text-decoration:none; color: black;">DietPlan</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <a href="contact.html" class="contact" style="text-decoration: none; color: black;">Contact</a>
+
+    </div>
+
+        <div class="page-wrapper bg-red p-tb-40 font-robo">
+            <div class="wrapper wrapper--w960">
+                <div class="card card-2">
+                    <div class="card-heading"></div>
+                     <div class="card-body">
+                        <h2 class="title" style="text-decoration:none; color: black;">BMI Calculator </h2>
+                            <form name="bmiForm">
+                                <input class="input--style-2 input-group" type="text" placeholder="Weight (kgs)" name="weight">
+                                <input class="input--style-2 input-group" type="text" placeholder="Height (cms)" name="height">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <input type="button" class="btn btn--radius btn--green" value="Get Results" onClick="calculateBmi()">
+    
+                                    </div>
+                                    <div class="col-2">
+                                      
+                                        <input class="btn btn--radius btn--green" type="reset" value="Reset" />
+                                    </div>
+                                </div></br> 
+                                <div class="input--style-2">
+                                <input class="input--style-2" type="text" placeholder="BMI Result" name="bmi"><br />
+                                <input class="input--style-2" type="text" placeholder="Health Status" name="meaning"><br />
+                                </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="site-footer">
+            <div>
+                <div>
+                    <p>&copy;Copyright 2021 Sri SaiRam Engineering College. Designed by IT Department. All right reserved</p>
+                </div>
+            </div>
+        </footer>
+
+
+        <script language="JavaScript">
+    
+			function calculateBmi() {
+			var weight = document.bmiForm.weight.value
+			var height = document.bmiForm.height.value
+			if(weight > 0 && height > 0){	
+			var finalBmi = weight/(height/100*height/100)
+			document.bmiForm.bmi.value = "Your BMI is"+" "+finalBmi
+			if(finalBmi < 18.5){
+			document.bmiForm.meaning.value = "You are Thin"
+			}
+			if(finalBmi > 18.5 && finalBmi < 25){
+			document.bmiForm.meaning.value = "You are Healthy"
+			}
+			if(finalBmi > 25){
+			document.bmiForm.meaning.value = "Your are Overweight"
+			}
+			}
+			else{
+			alert("Please Fill in the details to get your BMI")
+			}
+			}
+			//-->
+			</script>
+    </body>
+</html>
